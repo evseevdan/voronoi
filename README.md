@@ -1,7 +1,7 @@
 # Installation Information
 This program requires specific software to run.
 Install Anaconda from the Windows installer at `anaconda.com/download`.
-Navigate to the `\anaconda3` documentary and run the following command:
+In command prompt, navigate to the `\anaconda3` documentary and run the following command:
 
 `conda_ create -n ox -c conda-forge --strict-channel-priority osmnx jupyterlab`
 
