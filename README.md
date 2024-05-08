@@ -67,7 +67,7 @@ Run the first two cells (module imports and function definitions) - the program 
     RETURN TYPE:
         grList: list of lists, in the form [ [ID, ID, ... ], [ID, ID, ... ], ... ].
 
-## comparison(test, base)
+## comparison(test, base):
     Compares two grLists and gives match statistics.
     PARAMETERS:
         test: list of assigned node IDs.
@@ -79,7 +79,7 @@ Run the first two cells (module imports and function definitions) - the program 
         misclass: list.
         acc: float.
 
-## graphIt(Gp, nodesList, colours, title)
+## graphIt(Gp, nodesList, colours, title):
     Creates a graph of nodesList and saves to disk.
     PARAMETERS:
         Gp: graph of network area.
