@@ -10,9 +10,9 @@ Run the first two cells (module imports and function definitions) - the program 
 # Documentation
 
 ## autoSetup(centre, radius, generatorCount):
-    Create a graph, centred at `centre` and randomly create generator points.
+    Create a graph, centred at 'centre' and randomly create generator points.
     PARAMETERS:
-        centre: pair of coordinates in the form `(lat, long)` in decimal.
+        centre: pair of coordinates in the form '(latitude, longitude)' in decimal.
         radius: radius of the final graph in metres.
         generatorCount: number of generators to be randomly generated.
     RETURNS:
@@ -22,4 +22,67 @@ Run the first two cells (module imports and function definitions) - the program 
         generators: list.
         Gp: networkx.MultiDiGraph object.
 
-## manualSetup(
+## manualSetup(centre, radius, generatorList):
+    Create a graph, centred at 'centre' with generators at the specified points.
+    PARAMETERS:
+        centre: pair of coordinates in the form '(latitude, longitude)' in decimal.
+        radius: radius of the final graph in metres.
+        generatorList: list of generator coordinates in the form [ [lat, long], [lat, long], ... ]
+    RETURNS:
+        generators: list of generator points' node IDs.
+        Gp: graph of network.
+    RETURN TYPE:
+        generators: list.
+        Gp: networkx.MultiDiGraph object.
+
+## euclid(generators, Gp):
+    Assign every event point to a generator point based on Euclidean distance.
+    PARAMETERS:
+        generators: list of generator points' node IDs.
+        Gp: graph of network.
+    RETURNS:
+        grList: list of assigned node IDs.
+    RETURN TYPE:
+        grList: list of lists, in the form [ [ID, ID, ... ], [ID, ID, ... ], ... ]
+
+## taxicab(generators, Gp, griddir):
+    Assign every event point to a generator point based on Manhattan distance.
+    PARAMETERS:
+        generators: list of generator points' node IDs.
+        Gp: graph of network.
+        griddir: list of coordinates of two adjacent, grid-aligned intersections
+            in the form [ [lat, long], [lat, long] ]
+    RETURNS:
+        grList: list of assigned node IDs.
+    RETURN TYPE:
+        grList: list of lists, in the form [ [ID, ID, ... ], [ID, ID, ... ], ... ]
+
+## network(generators, Gp):
+    Assign every event point to a generator point based on network-based distance.
+    PARAMETERS:
+        generators: list of generator points' node IDs.
+        Gp: graph of network.
+    RETURNS:
+        grList: list of assigned node IDs.
+    RETURN TYPE:
+        grList: list of lists, in the form [ [ID, ID, ... ], [ID, ID, ... ], ... ].
+
+## comparison(test, base)
+    Compares two grLists and gives match statistics.
+    PARAMETERS:
+        test: list of assigned node IDs.
+        base: list of assigned node IDs.
+    RETURNS:
+        misclass: list of node IDs that were mismatches.
+        acc: accuracy rate (100 = 100%)
+    RETURN TYPE:
+        misclass: list.
+        acc: float.
+
+## graphIt(Gp, nodesList, colours, title)
+    Creates a graph of nodesList and saves to disk.
+    PARAMETERS:
+        Gp: graph of network area.
+        nodesList: list of lists of node IDs, in the form [ [ID, ID, ... ], [ID, ID, ... ], ... ].
+        colours: list of hex colours (must be as long as the number of lists in nodesList).
+        title: file will be saved as 'title.png'
