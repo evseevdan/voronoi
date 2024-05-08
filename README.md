@@ -9,7 +9,7 @@ Once this is complete, launch Anaconda Navigator and make sure you are running o
 Run Jupyter Notebook and open the `voronoi.ipynb` file.
 Run the first two cells (module imports and function definitions) - the program is then ready to use.
 
-If you encounter any issues, feel free to email me. `yevseyev.dan@gmail.com`
+If you encounter any issues, feel free to email me at `yevseyev.dan@gmail.com`.
 
 # Documentation
 
