@@ -30,7 +30,7 @@ If you encounter any issues, feel free to email me at `yevseyev.dan@gmail.com`.
     Create a graph, centred at 'centre' with generators at the specified points.
     PARAMETERS:
         centre: pair of coordinates in the form '(latitude, longitude)' in decimal.
-        radius: radius of the final graph in metres.
+        radius: width of the final graph in metres.
         generatorList: list of generator coordinates in the form [ [lat, long], [lat, long], ... ]
     RETURNS:
         generators: list of generator points' node IDs.
